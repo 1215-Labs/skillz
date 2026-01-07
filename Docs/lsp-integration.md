@@ -18,6 +18,36 @@ This document summarizes how to adapt your Claude Code setup to take advantage o
 5. Repository structure
 6. Self-improving skills
 
+## LSP Integration Strategy Flow
+
+The following flowchart illustrates how LSP integrates with Claude Code's architecture:
+
+```mermaid
+graph TD
+    LSP[LSP Language Server Protocol]
+    Prompting[Prompting Layer]
+    SubAgents[Sub-Agents]
+    Hooks[Hooks System]
+    Skills[Skills Framework]
+    Repo[Repository Structure]
+    Analysis[Code Analysis]
+    Feedback[Self-Improvement Feedback]
+    
+    LSP -->|Initialize| Prompting
+    Prompting -->|Context Requests| SubAgents
+    SubAgents -->|Trigger Events| Hooks
+    Hooks -->|Execute| Skills
+    Skills -->|Access & Modify| Repo
+    Repo -->|Code Intelligence| Analysis
+    Analysis -->|Insights| Feedback
+    Feedback -->|Refine| Prompting
+    Feedback -->|Optimize| SubAgents
+    Feedback -->|Enhance| Skills
+    
+    SubAgents -.->|Direct Access| Skills
+    Hooks -.->|Monitor| Repo
+```
+
 ---
 
 ## LSP Capabilities in Claude Code
@@ -165,3 +195,4 @@ my-project/
 │       ├── lsp-type-validator.py
 │       └── lsp-reference-checker.py
 └── src/ ...
+
