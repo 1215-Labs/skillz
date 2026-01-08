@@ -1,3 +1,23 @@
 {
-  "languages": []
+  "python": {
+    "command": "pyright",
+    "args": ["--outputjson"],
+    "extensionToLanguage": { ".py": "python" }
+  },
+  "typescript": {
+    "command": "typescript-language-server",
+    "args": ["--stdio"],
+    "extensionToLanguage": {
+      ".ts": "typescript",
+      ".tsx": "typescript"
+    }
+  },
+  "javascript": {
+    "command": "typescript-language-server",
+    "args": ["--stdio"],
+    "extensionToLanguage": {
+      ".js": "javascript",
+      ".jsx": "javascript"
+    }
+  }
 }
